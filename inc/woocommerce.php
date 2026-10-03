@@ -3,12 +3,18 @@
  * WooCommerce Custom Integration & Hooks
  *
  * Tailored for Industrial B2B equipment catalog, inquiries, and filtering.
+ * Safe against missing/inactive WooCommerce plugin.
  *
  * @package PargasPetroAb
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
+}
+
+// Exit early if WooCommerce is not active to prevent fatal errors on fresh installs.
+if ( ! class_exists( 'WooCommerce' ) ) {
+	return;
 }
 
 /**
@@ -60,7 +66,7 @@ add_action( 'woocommerce_single_product_summary', 'pargas_add_b2b_inquiry_button
  * @param WP_Query $query The main query.
  */
 function pargas_filter_product_query( $query ) {
-	if ( ! is_admin() && $query->is_main_query() && ( is_shop() || is_product_taxonomy() ) ) {
+	if ( ! is_admin() && $query->is_main_query() && function_exists( 'is_shop' ) && function_exists( 'is_product_taxonomy' ) && ( is_shop() || is_product_taxonomy() ) ) {
 		$tax_query = (array) $query->get( 'tax_query' );
 
 		// Filter by Category.
