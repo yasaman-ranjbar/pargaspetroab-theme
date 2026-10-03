@@ -1,0 +1,31 @@
+services:
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pargas_root_pass
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: pargas_user
+      MYSQL_PASSWORD: pargas_user_pass
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:php8.2-apache
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: pargas_user
+      WORDPRESS_DB_PASSWORD: pargas_user_pass
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - .:/var/www/html/wp-content/themes/pargaspetroab-theme
+      - wp_core:/var/www/html
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+  wp_core:
