@@ -11,6 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Exit early if WooCommerce is not installed or active.
+if ( ! function_exists( 'wc_get_product' ) ) {
+	return;
+}
+
 global $product;
 if ( ! $product ) {
 	$product = wc_get_product( get_the_ID() );
@@ -21,10 +26,10 @@ if ( ! $product ) {
 
 $product_id    = $product->get_id();
 $product_title = $product->get_name();
-$categories    = wc_get_product_category_list( $product_id, ', ' );
+$categories    = function_exists( 'wc_get_product_category_list' ) ? wc_get_product_category_list( $product_id, ', ' ) : '';
 $short_desc    = $product->get_short_description();
 ?>
-<div <?php wc_product_class( 'pargas-product-card', $product ); ?>>
+<div <?php if ( function_exists( 'wc_product_class' ) ) { wc_product_class( 'pargas-product-card', $product ); } else { echo 'class="pargas-product-card"'; } ?>>
 	<div class="pargas-product-card-thumb">
 		<a href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( $product_title ); ?>">
 			<?php if ( has_post_thumbnail() ) : ?>
