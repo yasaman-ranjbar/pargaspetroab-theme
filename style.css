@@ -1,0 +1,187 @@
+/*
+Theme Name: Pargas Petro Ab
+Theme URI: https://pargaspetroab.com/
+Author: Yasaman Ranjbar
+Author URI: https://www.yasaman-ranjbar.ir/
+Description: Custom, lightweight, high-performance WordPress & WooCommerce theme built for Pargas Petro Ab (Industrial Water Treatment & Wastewater Equipment). Engineered with native WordPress APIs, custom responsive technical table builder, Excel (.xlsx) table import, Yoast SEO Premium compatibility, and multilingual readiness.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pargaspetroab
+Tags: industrial, water-treatment, engineering, b2b, woocommerce, translation-ready, accessibility-ready, custom-menu, featured-images
+*/
+
+/* ==========================================================================
+   DESIGN SYSTEM & CSS CUSTOM PROPERTIES
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --color-primary-dark: #0a1f33;      /* Deep Industrial Navy */
+  --color-primary: #0f2b48;           /* Primary Navy Blue */
+  --color-primary-light: #1b3d63;     /* Lighter Slate Navy */
+  --color-accent: #0088a8;            /* Industrial Aqua */
+  --color-accent-bright: #00a8cc;     /* High-visibility Cyan / Water Highlight */
+  --color-teal: #028090;              /* Clean Water Teal */
+  --color-teal-light: #e0f4f7;        /* Light Teal Tint */
+  --color-white: #ffffff;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-farsi: 'Vazirmatn', 'Shabnam', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+
+  /* Spacing Scale (8pt Grid) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-narrow: 960px;
+  --header-height: 80px;
+  --topbar-height: 40px;
+
+  /* Elevation / Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 43, 72, 0.08), 0 2px 4px -2px rgba(15, 43, 72, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 43, 72, 0.1), 0 4px 6px -4px rgba(15, 43, 72, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 43, 72, 0.12), 0 8px 10px -6px rgba(15, 43, 72, 0.04);
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* RTL Language Support (for Farsi / Persian) */
+html[dir="rtl"] {
+  font-family: var(--font-farsi);
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-gray-800);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.drawer-open {
+  overflow: hidden;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover, a:focus-visible {
+  color: var(--color-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Focus styles for WCAG accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: 2px;
+}
+
+/* Screen reader text */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  clip: auto !important;
+  clip-path: none;
+  color: var(--color-primary-dark);
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
