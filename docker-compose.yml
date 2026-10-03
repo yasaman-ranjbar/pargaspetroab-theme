@@ -23,6 +23,7 @@ services:
       WORDPRESS_DEBUG: 1
     volumes:
       - .:/var/www/html/wp-content/themes/pargaspetroab-theme
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - wp_core:/var/www/html
     depends_on:
       - db
