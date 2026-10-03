@@ -80,6 +80,17 @@ function pargas_content_width() {
 add_action( 'after_setup_theme', 'pargas_content_width', 0 );
 
 /**
+ * Increase WordPress upload size limit to 1024 MB.
+ *
+ * @param int $bytes Default byte limit.
+ * @return int Adjusted byte limit.
+ */
+function pargas_filter_upload_size_limit( $bytes ) {
+	return 1024 * 1024 * 1024; // 1024 MB in bytes
+}
+add_filter( 'upload_size_limit', 'pargas_filter_upload_size_limit' );
+
+/**
  * Fallback menu if no WordPress menu is assigned yet.
  */
 if ( ! function_exists( 'pargas_fallback_desktop_menu' ) ) {
