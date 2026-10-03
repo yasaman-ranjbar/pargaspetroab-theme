@@ -1,0 +1,16 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs & Temp
+*.log
+*.tmp
+*.bak
+
+# Node & Composer dependencies (if any added later)
+node_modules/
+vendor/
+
+# IDE files
+.vscode/
+.idea/
