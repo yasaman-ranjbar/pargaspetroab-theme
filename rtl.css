@@ -1,0 +1,154 @@
+/*
+Theme Name: Pargas Petro Ab
+Description: RTL Stylesheet for Persian Language
+*/
+
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+
+body,
+html,
+input,
+textarea,
+select,
+button {
+  font-family: 'Vazirmatn', 'Shabnam', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Header & Top Bar RTL */
+.pargas-top-bar-inner {
+  direction: rtl;
+}
+
+.pargas-search-icon {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+.pargas-contact-item {
+  direction: rtl;
+}
+
+/* Navigation RTL */
+.pargas-desktop-nav .pargas-nav-list {
+  direction: rtl;
+}
+
+.pargas-nav-list .sub-menu {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+/* Mobile Drawer RTL */
+.pargas-mobile-drawer {
+  right: 0;
+  left: auto;
+  transform: translateX(100%);
+}
+
+.pargas-mobile-drawer.is-active {
+  transform: translateX(0);
+}
+
+.pargas-drawer-nav-list .sub-menu {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+/* Hero & Slider RTL */
+.pargas-hero-section,
+.pargas-hero-slider-section {
+  direction: rtl;
+  text-align: right;
+}
+
+.pargas-slide-actions {
+  direction: rtl;
+}
+
+.pargas-slide-spec-pill {
+  direction: rtl;
+}
+
+.pargas-slider-prev {
+  right: 20px;
+  left: auto;
+}
+
+.pargas-slider-next {
+  left: 20px;
+  right: auto;
+}
+
+/* Cards & Grids RTL */
+.pargas-equipment-card,
+.pargas-project-card,
+.pargas-product-card {
+  text-align: right;
+  direction: rtl;
+}
+
+.pargas-project-status-badge {
+  right: auto;
+  left: 12px;
+}
+
+.pargas-product-badge {
+  left: auto;
+  right: 10px;
+}
+
+.pargas-link-more,
+.pargas-link-arrow {
+  direction: rtl;
+}
+
+/* Technical Tables RTL */
+.pargas-technical-table {
+  direction: rtl;
+  text-align: right;
+}
+
+.pargas-technical-table th,
+.pargas-technical-table td {
+  text-align: right;
+  border-right: none;
+  border-left: 1px solid var(--color-gray-100);
+}
+
+/* Forms & Modals RTL */
+.pargas-form-box,
+.pargas-modal-content,
+.pargas-contact-card {
+  direction: rtl;
+  text-align: right;
+}
+
+.pargas-modal-footer {
+  justify-content: flex-start;
+}
+
+/* Footer RTL */
+.pargas-site-footer {
+  direction: rtl;
+  text-align: right;
+}
+
+.pargas-footer-contact-list {
+  padding-right: 0;
+}
+
+.pargas-footer-menu {
+  padding-right: 0;
+}
+
+/* Numbers in LTR */
+[dir="ltr"],
+.pargas-stat-number,
+.pargas-spec-val,
+.pargas-phone-link {
+  direction: ltr !important;
+  display: inline-block;
+}
