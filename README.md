@@ -108,7 +108,9 @@ pargaspetroab-theme/
 ├── searchform.php                # Search form template
 ├── 404.php                       # 404 error page
 ├── functions.php                 # Theme bootstrap
-└── style.css                     # Design tokens & theme metadata
+├── style.css                     # Design tokens & theme metadata
+├── docker-compose.yml            # Instant local containerized environment
+└── .gitignore                    # Version control ignore rules
 ```
 
 ---
@@ -145,3 +147,26 @@ pargaspetroab-theme/
 - Vanilla JavaScript (<12KB) loaded with `defer`.
 - Google Maps iframe loaded with `loading="lazy"` exclusively on the Contact page.
 - WCAG 2.1 AA compliant: 4.5:1 color contrast, visible `:focus-visible` rings, screen reader text, keyboard accessible drawer and modal dialog.
+
+---
+
+## 5. Instant Local Development with Docker
+
+Run this theme locally in less than 60 seconds with Docker Compose:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yasaman-ranjbar/pargaspetroab-theme.git
+
+# 2. Navigate to the project directory
+cd pargaspetroab-theme
+
+# 3. Start the containers (WordPress + MariaDB)
+docker compose up -d
+```
+
+Open your browser at `http://localhost:8080`:
+1. Follow the quick WordPress installation wizard.
+2. In the Admin Dashboard, go to **Appearance > Themes** (نمایش > پوسته‌ها).
+3. Activate the **Pargas Petro Ab** theme.
+4. Install recommended plugins: **WooCommerce** and **Yoast SEO**.
