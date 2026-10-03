@@ -1,0 +1,1515 @@
+/**
+ * Pargas Petro Ab - Production Frontend Stylesheet
+ * Industrial Water Treatment & Wastewater Equipment Theme
+ */
+
+/* ==========================================================================
+   LAYOUT & CONTAINER
+   ========================================================================== */
+.pargas-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.pargas-py-8 {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.pargas-py-16 {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ==========================================================================
+   BUTTONS & UI CONTROLS
+   ========================================================================== */
+.pargas-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.65rem 1.25rem;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.25;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.pargas-btn-primary {
+  background-color: var(--color-teal);
+  color: var(--color-white);
+  border-color: var(--color-teal);
+  box-shadow: var(--shadow-sm);
+}
+
+.pargas-btn-primary:hover,
+.pargas-btn-primary:focus-visible {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.pargas-btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.pargas-btn-outline:hover,
+.pargas-btn-outline:focus-visible {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.pargas-btn-outline-light {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.pargas-btn-outline-light:hover,
+.pargas-btn-outline-light:focus-visible {
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+  border-color: var(--color-white);
+}
+
+.pargas-btn-outline-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: var(--text-xs);
+  border: 1px solid var(--color-gray-300);
+  color: var(--color-gray-700);
+  background: var(--color-white);
+}
+
+.pargas-btn-outline-sm:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.pargas-btn-primary-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: var(--text-xs);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: 1px solid var(--color-accent);
+}
+
+.pargas-btn-primary-sm:hover {
+  background-color: var(--color-teal);
+}
+
+.pargas-btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: var(--text-base);
+}
+
+.pargas-btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+/* Top Bar */
+.pargas-top-bar {
+  background-color: var(--color-primary-dark);
+  color: var(--color-gray-300);
+  font-size: var(--text-xs);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pargas-top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--topbar-height);
+  gap: var(--space-4);
+}
+
+.pargas-top-search {
+  flex: 0 1 320px;
+}
+
+.pargas-search-input-wrap {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+}
+
+.pargas-search-icon {
+  color: var(--color-gray-400);
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.pargas-top-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  width: 100%;
+}
+
+.pargas-top-search-input::placeholder {
+  color: var(--color-gray-400);
+}
+
+.pargas-top-contacts {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.pargas-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pargas-phone-link, .pargas-email-link {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.pargas-phone-link:hover, .pargas-email-link:hover {
+  color: var(--color-accent-bright);
+}
+
+.pargas-top-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pargas-social-link {
+  color: var(--color-gray-300);
+  display: flex;
+  align-items: center;
+}
+
+.pargas-social-link:hover {
+  color: var(--color-accent-bright);
+}
+
+/* Main Header */
+.pargas-main-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: all var(--transition-normal);
+}
+
+.pargas-main-header.is-sticky {
+  position: sticky;
+  top: 0;
+  box-shadow: var(--shadow-md);
+  z-index: 99;
+}
+
+.pargas-main-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  gap: var(--space-4);
+}
+
+/* Branding */
+.pargas-custom-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.pargas-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pargas-brand-title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-primary-dark);
+  line-height: 1.1;
+}
+
+.pargas-brand-tagline {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-gray-500);
+  letter-spacing: 0.02em;
+}
+
+/* Desktop Navigation */
+.pargas-desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.pargas-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: var(--space-6);
+}
+
+.pargas-nav-list > .menu-item {
+  position: relative;
+}
+
+.pargas-nav-list > .menu-item > a {
+  display: block;
+  padding: 10px 4px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-gray-700);
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.pargas-nav-list > .menu-item:hover > a,
+.pargas-nav-list > .menu-item.current-menu-item > a {
+  color: var(--color-teal);
+  border-bottom-color: var(--color-teal);
+}
+
+/* Submenu Dropdown */
+.pargas-nav-list .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-white);
+  min-width: 260px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  list-style: none;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all var(--transition-fast);
+  z-index: 100;
+}
+
+html[dir="rtl"] .pargas-nav-list .sub-menu {
+  left: auto;
+  right: 0;
+}
+
+.pargas-nav-list .menu-item:hover > .sub-menu,
+.pargas-nav-list .menu-item:focus-within > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.pargas-nav-list .sub-menu li a {
+  display: block;
+  padding: 8px 16px;
+  font-size: var(--text-xs);
+  color: var(--color-gray-700);
+  line-height: 1.4;
+}
+
+.pargas-nav-list .sub-menu li a:hover {
+  background-color: var(--color-gray-50);
+  color: var(--color-accent);
+}
+
+/* Header Actions */
+.pargas-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.pargas-lang-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.pargas-lang-pill {
+  color: var(--color-gray-500);
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+}
+
+.pargas-lang-pill.active {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  background-color: var(--color-gray-100);
+}
+
+.pargas-lang-divider {
+  color: var(--color-gray-300);
+}
+
+/* Hamburger button */
+.pargas-hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.pargas-hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary-dark);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* ==========================================================================
+   MOBILE DRAWER NAVIGATION
+   ========================================================================== */
+.pargas-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 31, 51, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.pargas-drawer-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pargas-mobile-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  max-width: 85vw;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-xl);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+html[dir="rtl"] .pargas-mobile-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.pargas-mobile-drawer.is-active {
+  transform: translateX(0);
+}
+
+.pargas-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.pargas-drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--color-primary-dark);
+}
+
+.pargas-drawer-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--color-gray-600);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.pargas-drawer-body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.pargas-drawer-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.pargas-drawer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pargas-drawer-nav-list li a {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-gray-800);
+  display: block;
+}
+
+.pargas-drawer-nav-list .sub-menu {
+  list-style: none;
+  padding-left: 16px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+html[dir="rtl"] .pargas-drawer-nav-list .sub-menu {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+.pargas-drawer-contacts {
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   HOMEPAGE STYLES
+   ========================================================================== */
+.pargas-hero-section {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 4.5rem 0 3.5rem;
+  overflow: hidden;
+  background-image: radial-gradient(circle at 80% 20%, rgba(0, 168, 204, 0.15) 0%, transparent 60%);
+}
+
+.pargas-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background-color: rgba(2, 128, 144, 0.2);
+  border: 1px solid rgba(0, 168, 204, 0.4);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-accent-bright);
+  margin-bottom: var(--space-4);
+}
+
+.pargas-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent-bright);
+}
+
+.pargas-hero-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4);
+  max-width: 900px;
+}
+
+.pargas-hero-description {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--color-gray-300);
+  max-width: 800px;
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+}
+
+.pargas-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+}
+
+.pargas-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: var(--space-6);
+  max-width: 900px;
+}
+
+.pargas-stat-number {
+  display: block;
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-accent-bright);
+}
+
+.pargas-stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-gray-300);
+}
+
+/* Sections */
+.pargas-section {
+  padding: 5rem 0;
+}
+
+.pargas-section-alt {
+  background-color: var(--color-gray-50);
+}
+
+.pargas-subheading {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.pargas-heading {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+}
+
+.pargas-lead {
+  font-size: var(--text-base);
+  color: var(--color-gray-600);
+  max-width: 720px;
+}
+
+.pargas-section-intro {
+  margin-bottom: var(--space-10);
+}
+
+.pargas-section-intro.text-center .pargas-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pargas-section-header-split {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+  gap: var(--space-4);
+}
+
+/* Equipment Grid */
+.pargas-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.pargas-equipment-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.pargas-equipment-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pargas-equipment-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-teal-light);
+  color: var(--color-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+.pargas-equipment-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-2);
+  line-height: 1.3;
+}
+
+.pargas-equipment-card p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.pargas-link-more {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pargas-link-more:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Projects Grid */
+.pargas-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-6);
+}
+
+.pargas-project-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.pargas-project-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+}
+
+.pargas-project-card-thumb {
+  position: relative;
+  background-color: var(--color-primary);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.pargas-project-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.pargas-project-card:hover .pargas-project-card-thumb img {
+  transform: scale(1.03);
+}
+
+.pargas-project-placeholder-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-400);
+  font-size: var(--text-sm);
+  gap: 8px;
+  background: linear-gradient(135deg, #0a1f33 0%, #1b3d63 100%);
+}
+
+.pargas-project-status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--color-teal);
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+html[dir="rtl"] .pargas-project-status-badge {
+  right: auto;
+  left: 12px;
+}
+
+.pargas-project-card-content {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pargas-project-card-meta-top {
+  display: flex;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-2);
+}
+
+.pargas-project-card-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--space-3);
+}
+
+.pargas-project-card-title a {
+  color: var(--color-primary-dark);
+}
+
+.pargas-project-card-title a:hover {
+  color: var(--color-accent);
+}
+
+.pargas-project-specs {
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: var(--text-xs);
+}
+
+.pargas-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pargas-spec-row.highlight {
+  border-top: 1px dashed var(--color-gray-300);
+  padding-top: 6px;
+  margin-top: 2px;
+}
+
+.pargas-spec-label {
+  color: var(--color-gray-600);
+}
+
+.pargas-spec-val {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.pargas-spec-row.highlight .pargas-spec-val {
+  color: var(--color-teal);
+  font-size: var(--text-sm);
+}
+
+.pargas-project-card-footer {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.pargas-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   TECHNICAL SPECIFICATIONS TABLE (CORE REQUIREMENT)
+   ========================================================================== */
+.pargas-technical-table-container {
+  margin: var(--space-8) 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.pargas-table-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.pargas-technical-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+html[dir="rtl"] .pargas-technical-table {
+  text-align: right;
+}
+
+.pargas-technical-table th,
+.pargas-technical-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-gray-200);
+  border-right: 1px solid var(--color-gray-100);
+  white-space: nowrap;
+}
+
+.pargas-technical-table th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.pargas-technical-table tbody tr:nth-child(even) {
+  background-color: var(--color-gray-50);
+}
+
+.pargas-technical-table tbody tr:hover {
+  background-color: var(--color-teal-light);
+}
+
+.pargas-table-scroll-hint {
+  padding: 8px 16px;
+  background-color: var(--color-gray-100);
+  border-top: 1px solid var(--color-gray-200);
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  text-align: center;
+}
+
+/* ==========================================================================
+   PRODUCT ARCHIVE & CARDS
+   ========================================================================== */
+.pargas-catalog-header,
+.pargas-archive-banner,
+.pargas-page-banner,
+.pargas-project-header {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 3.5rem 0;
+}
+
+.pargas-catalog-title,
+.pargas-archive-title,
+.pargas-page-title,
+.pargas-project-title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-white);
+  margin-top: 6px;
+  line-height: 1.2;
+}
+
+.pargas-catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-8);
+}
+
+.pargas-catalog-filter-form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.pargas-select-filter {
+  padding: 8px 14px;
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-gray-800);
+  outline: none;
+}
+
+.pargas-clear-filter-btn {
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.pargas-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.pargas-product-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.pargas-product-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pargas-product-card-thumb {
+  position: relative;
+  background-color: var(--color-gray-100);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pargas-product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(15, 43, 72, 0.85);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+html[dir="rtl"] .pargas-product-badge {
+  left: auto;
+  right: 10px;
+}
+
+.pargas-product-card-content {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pargas-product-categories {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  margin-bottom: 4px;
+}
+
+.pargas-product-card-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.pargas-product-card-title a {
+  color: var(--color-primary-dark);
+}
+
+.pargas-product-excerpt {
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.pargas-product-card-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+/* Single Product Layout */
+.pargas-product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+
+.pargas-b2b-action-card {
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.pargas-b2b-cta-btns {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.pargas-product-badges-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+}
+
+.pargas-badge-outline {
+  border: 1px solid var(--color-gray-300);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+}
+
+/* ==========================================================================
+   CONTACT PAGE & FORMS
+   ========================================================================== */
+.pargas-contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.pargas-contact-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.pargas-contact-card h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.pargas-card-contact-line {
+  margin-top: 8px;
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+}
+
+.pargas-form-box {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+.pargas-form-box h2 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 6px;
+}
+
+.pargas-form {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.pargas-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.pargas-form-field label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-gray-700);
+  margin-bottom: 6px;
+}
+
+.pargas-form-field input,
+.pargas-form-field textarea,
+.pargas-form-field select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-gray-900);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.pargas-form-field input:focus,
+.pargas-form-field textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.pargas-map-section {
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: var(--space-8);
+}
+
+.pargas-map-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 4px;
+}
+
+.pargas-map-desc {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-4);
+}
+
+.pargas-map-container {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   MODAL COMPONENT
+   ========================================================================== */
+.pargas-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.pargas-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pargas-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 31, 51, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.pargas-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: var(--space-4);
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  z-index: 10;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.pargas-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.pargas-modal-title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+}
+
+.pargas-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--color-gray-500);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.pargas-modal-body {
+  padding: var(--space-6);
+}
+
+.pargas-modal-intro {
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+.pargas-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Feedback alerts */
+.pargas-alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.pargas-alert-success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.pargas-alert-danger {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ==========================================================================
+   BREADCRUMBS
+   ========================================================================== */
+.pargas-breadcrumbs-nav {
+  background-color: var(--color-gray-100);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: 8px 0;
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+}
+
+.pargas-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  gap: 6px;
+}
+
+.pargas-breadcrumbs a {
+  color: var(--color-gray-600);
+}
+
+.pargas-breadcrumbs a:hover {
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.pargas-site-footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-gray-300);
+  margin-top: auto;
+}
+
+.pargas-footer-main {
+  padding: 4.5rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pargas-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1.4fr;
+  gap: var(--space-8);
+}
+
+.pargas-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-4);
+}
+
+.pargas-footer-title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.pargas-footer-desc {
+  font-size: var(--text-xs);
+  color: var(--color-gray-400);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.pargas-footer-certifications {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pargas-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background-color: rgba(2, 128, 144, 0.25);
+  border: 1px solid rgba(0, 168, 204, 0.3);
+  color: var(--color-accent-bright);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.pargas-footer-heading {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.pargas-footer-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pargas-footer-menu li a {
+  color: var(--color-gray-400);
+  font-size: var(--text-xs);
+  transition: color var(--transition-fast);
+}
+
+.pargas-footer-menu li a:hover {
+  color: var(--color-accent-bright);
+}
+
+.pargas-footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pargas-contact-item-detailed {
+  display: flex;
+  gap: 8px;
+  font-size: var(--text-xs);
+}
+
+.pargas-contact-item-detailed strong {
+  display: block;
+  color: var(--color-white);
+}
+
+.pargas-contact-item-detailed p {
+  color: var(--color-gray-400);
+  margin: 0;
+}
+
+.pargas-contact-item-detailed a {
+  color: var(--color-accent-bright);
+}
+
+.pargas-footer-bottom {
+  padding: var(--space-4) 0;
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+}
+
+.pargas-footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .pargas-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pargas-product-layout {
+    grid-template-columns: 1fr;
+  }
+  .pargas-contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .pargas-desktop-nav,
+  .pargas-hide-mobile {
+    display: none;
+  }
+  .pargas-hamburger-btn {
+    display: flex;
+  }
+  .pargas-hero-section {
+    padding: 3rem 0 2.5rem;
+  }
+  .pargas-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .pargas-form-row {
+    grid-template-columns: 1fr;
+  }
+}

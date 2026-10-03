@@ -1,0 +1,138 @@
+/**
+ * Pargas Petro Ab - Admin Technical Table Builder Stylesheet
+ */
+
+.pargas-admin-table-wrapper {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.pargas-admin-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dcdcde;
+}
+
+.pargas-toolbar-left,
+.pargas-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pargas-admin-table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  border: 1px solid #dcdcde;
+  border-radius: 3px;
+  background: #f6f7f7;
+}
+
+#pargas-admin-grid {
+  margin: 0;
+  border: none;
+  background: #fff;
+}
+
+#pargas-admin-grid th {
+  background: #f0f0f1;
+  font-weight: 600;
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+#pargas-admin-grid .pargas-row-num {
+  width: 40px;
+  text-align: center;
+  color: #646970;
+  font-size: 11px;
+}
+
+#pargas-admin-grid .pargas-action-col {
+  width: 45px;
+  text-align: center;
+}
+
+.pargas-header-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pargas-col-title-input {
+  font-weight: 600;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #8c8f94;
+  border-radius: 3px;
+  padding: 4px 8px;
+  width: 100%;
+  min-width: 120px;
+}
+
+.pargas-remove-col-btn {
+  background: none;
+  border: none;
+  color: #d63638;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.pargas-remove-col-btn:hover {
+  color: #b32d2e;
+}
+
+#pargas-admin-grid td {
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+
+.pargas-cell-input {
+  width: 100%;
+  min-width: 120px;
+  padding: 6px 8px;
+  border: 1px solid #dcdcde;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.pargas-cell-input:focus {
+  border-color: #2271b1;
+  box-shadow: 0 0 0 1px #2271b1;
+  outline: 2px solid transparent;
+}
+
+.pargas-remove-row-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.pargas-remove-row-btn .dashicons {
+  color: #d63638;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.pargas-remove-row-btn:hover .dashicons {
+  color: #b32d2e;
+}
+
+#pargas-excel-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
