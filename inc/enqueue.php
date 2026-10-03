@@ -29,6 +29,16 @@ function pargas_enqueue_scripts() {
 		PARGAS_THEME_VERSION
 	);
 
+	// Minimal static pages (About Us / Contact Us).
+	if ( is_page() ) {
+		wp_enqueue_style(
+			'pargas-pages-style',
+			PARGAS_THEME_URI . '/assets/css/pages.css',
+			array( 'pargas-main-style' ),
+			PARGAS_THEME_VERSION
+		);
+	}
+
 	// Main Vanilla JavaScript (no jQuery dependency).
 	wp_enqueue_script(
 		'pargas-main-script',
