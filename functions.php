@@ -25,5 +25,9 @@ require_once PARGAS_THEME_DIR . '/inc/taxonomies.php';
 require_once PARGAS_THEME_DIR . '/inc/project-fields.php';
 require_once PARGAS_THEME_DIR . '/inc/project-table.php';
 require_once PARGAS_THEME_DIR . '/inc/excel-import.php';
-require_once PARGAS_THEME_DIR . '/inc/woocommerce.php';
 require_once PARGAS_THEME_DIR . '/inc/seo.php';
+
+// Include WooCommerce module only when WooCommerce plugin is active.
+if ( class_exists( 'WooCommerce' ) ) {
+	require_once PARGAS_THEME_DIR . '/inc/woocommerce.php';
+}
