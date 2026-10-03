@@ -78,3 +78,30 @@ function pargas_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'pargas_content_width', 1280 );
 }
 add_action( 'after_setup_theme', 'pargas_content_width', 0 );
+
+/**
+ * Fallback menu if no WordPress menu is assigned yet.
+ */
+if ( ! function_exists( 'pargas_fallback_desktop_menu' ) ) {
+	function pargas_fallback_desktop_menu() {
+		?>
+		<ul class="pargas-nav-list" id="primary-menu">
+			<li class="menu-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'pargaspetroab' ); ?></a></li>
+			<li class="menu-item menu-item-has-children">
+				<a href="<?php echo esc_url( home_url( '/products/' ) ); ?>"><?php esc_html_e( 'Products & Equipment', 'pargaspetroab' ); ?></a>
+				<ul class="sub-menu">
+					<li><a href="<?php echo esc_url( home_url( '/product-category/wastewater-packages/' ) ); ?>"><?php esc_html_e( 'Sewage Treatment Packages (MBBR/MBR)', 'pargaspetroab' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/product-category/sand-carbon-filters/' ) ); ?>"><?php esc_html_e( 'Sand & Activated Carbon Filters', 'pargaspetroab' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/product-category/daf-systems/' ) ); ?>"><?php esc_html_e( 'DAF (Dissolved Air Flotation)', 'pargaspetroab' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/product-category/ro-plants/' ) ); ?>"><?php esc_html_e( 'Industrial Reverse Osmosis (RO)', 'pargaspetroab' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/product-category/sludge-dewatering/' ) ); ?>"><?php esc_html_e( 'Filter Press & Dewatering', 'pargaspetroab' ); ?></a></li>
+				</ul>
+			</li>
+			<li class="menu-item"><a href="<?php echo esc_url( home_url( '/projects/' ) ); ?>"><?php esc_html_e( 'Projects & References', 'pargaspetroab' ); ?></a></li>
+			<li class="menu-item"><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Technical Articles', 'pargaspetroab' ); ?></a></li>
+			<li class="menu-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About Us', 'pargaspetroab' ); ?></a></li>
+			<li class="menu-item"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact Us', 'pargaspetroab' ); ?></a></li>
+		</ul>
+		<?php
+	}
+}
