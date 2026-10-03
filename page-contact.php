@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Contact Us
+ * Template Name: تماس با ما (Contact Us)
  *
  * Dedicated Contact & Factory Inquiries Page with secure nonce-verified
  * form submission, spam protection, and lazy-loaded Google Maps embed.
@@ -20,10 +20,10 @@ $error_msg    = '';
 if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset( $_POST['pargas_contact_submit'] ) ) {
 	if ( ! isset( $_POST['pargas_contact_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['pargas_contact_nonce'] ), 'pargas_contact_action' ) ) {
 		$form_error = true;
-		$error_msg  = __( 'Security verification failed. Please refresh and try again.', 'pargaspetroab' );
+		$error_msg  = __( 'اعتبارسنجی امنیتی ناموفق بود. لطفاً صفحه را بازنشانی کرده و مجدداً تلاش نمایید.', 'pargaspetroab' );
 	} elseif ( ! empty( $_POST['pargas_contact_hp'] ) ) {
 		$form_error = true;
-		$error_msg  = __( 'Automated spam submission detected.', 'pargaspetroab' );
+		$error_msg  = __( 'ارسال خودکار اسپم شناسایی شد.', 'pargaspetroab' );
 	} else {
 		$name    = isset( $_POST['contact_name'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_name'] ) ) : '';
 		$company = isset( $_POST['contact_company'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_company'] ) ) : '';
@@ -34,18 +34,18 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset( $_POST['pargas_contact_subm
 
 		if ( empty( $name ) || empty( $email ) || ! is_email( $email ) || empty( $message ) ) {
 			$form_error = true;
-			$error_msg  = __( 'Please complete all required fields with valid information.', 'pargaspetroab' );
+			$error_msg  = __( 'لطفاً تمامی فیلدهای الزامی را به صورت صحیح تکمیل فرمایید.', 'pargaspetroab' );
 		} else {
 			$to          = get_option( 'admin_email' );
-			$mail_sub    = sprintf( __( '[Pargas Petro Ab Inquiry] %s (%s)', 'pargaspetroab' ), $subject ? $subject : 'Website Contact', $company ? $company : $name );
-			$mail_body   = "New B2B Procurement / Technical Inquiry:\n\n";
-			$mail_body  .= "Name: " . $name . "\n";
-			$mail_body  .= "Company / Organization: " . $company . "\n";
-			$mail_body  .= "Phone: " . $phone . "\n";
-			$mail_body  .= "Email: " . $email . "\n";
-			$mail_body  .= "Subject: " . $subject . "\n\n";
-			$mail_body  .= "Message / Specifications:\n" . $message . "\n\n";
-			$mail_body  .= "--\nSent from Pargas Petro Ab Contact Form (https://pargaspetroab.com/)";
+			$mail_sub    = sprintf( __( '[استعلام فنی پرگاس پترو آب] %s (%s)', 'pargaspetroab' ), $subject ? $subject : 'پیام از سایت', $company ? $company : $name );
+			$mail_body   = "یک استعلام فنی جدید در وب‌سایت ثبت شد:\n\n";
+			$mail_body  .= "نام و نام خانوادگی: " . $name . "\n";
+			$mail_body  .= "شرکت / سازمان: " . $company . "\n";
+			$mail_body  .= "تلفن تماس: " . $phone . "\n";
+			$mail_body  .= "ایمیل: " . $email . "\n";
+			$mail_body  .= "موضوع: " . $subject . "\n\n";
+			$mail_body  .= "شرح درخواست و مشخصات فنی پساب:\n" . $message . "\n\n";
+			$mail_body  .= "--\nارسال‌شده از فرم تماس شرکت پرگاس پترو آب (https://pargaspetroab.com/)";
 
 			$headers = array(
 				'Content-Type: text/plain; charset=UTF-8',
@@ -56,7 +56,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset( $_POST['pargas_contact_subm
 				$form_success = true;
 			} else {
 				$form_error = true;
-				$error_msg  = __( 'Unable to send message due to a server transmission issue. Please call our sales team directly.', 'pargaspetroab' );
+				$error_msg  = __( 'خطا در ارسال ایمیل سرور. لطفاً مستقیماً با شماره تلفن دفتر تماس حاصل فرمایید.', 'pargaspetroab' );
 			}
 		}
 	}
@@ -68,10 +68,10 @@ get_header();
 <main id="primary" class="site-main pargas-contact-page">
 	<div class="pargas-page-banner">
 		<div class="pargas-container">
-			<span class="pargas-subheading"><?php esc_html_e( 'Engineering Sales & Manufacturing Support', 'pargaspetroab' ); ?></span>
-			<h1 class="pargas-page-title"><?php esc_html_e( 'Contact Pargas Petro Ab', 'pargaspetroab' ); ?></h1>
+			<span class="pargas-subheading"><?php esc_html_e( 'واحد مهندسی فروش و پشتیبانی فنی کارخانه', 'pargaspetroab' ); ?></span>
+			<h1 class="pargas-page-title"><?php esc_html_e( 'تماس با پرگاس پترو آب', 'pargaspetroab' ); ?></h1>
 			<p class="pargas-page-intro">
-				<?php esc_html_e( 'Connect with our technical engineering consultants for inquiries, custom plant equipment specifications, or factory site visits.', 'pargaspetroab' ); ?>
+				<?php esc_html_e( 'جهت مشاوره تخصصی در زمینه تصفیه پساب‌های صنعتی و بهداشتی، برآورد اولیه ابعاد پکیج، استعلام قیمت یا هماهنگی بازدید از کارخانه با ما در ارتباط باشید.', 'pargaspetroab' ); ?>
 			</p>
 		</div>
 	</div>
@@ -81,39 +81,39 @@ get_header();
 			<!-- Contact Information & Company Cards -->
 			<div class="pargas-contact-info-panel">
 				<div class="pargas-contact-card">
-					<h3>📍 <?php esc_html_e( 'Tehran Commercial & Engineering HQ', 'pargaspetroab' ); ?></h3>
-					<p><?php esc_html_e( 'Shahid Motahari St, Delara St, Mirza Shirazi St, No. 24, 2nd Floor, Tehran, Iran', 'pargaspetroab' ); ?></p>
+					<h3>📍 <?php esc_html_e( 'دفتر مرکزی مهندسی و فروش (تهران)', 'pargaspetroab' ); ?></h3>
+					<p><?php esc_html_e( 'خیابان شهید مطهری، خیابان میرزای شیرازی، خیابان دل‌آرا، پلاک ۲۴، طبقه دوم، تهران، ایران', 'pargaspetroab' ); ?></p>
 					<div class="pargas-card-contact-line">
-						<strong><?php esc_html_e( 'Central Office Phone:', 'pargaspetroab' ); ?></strong>
+						<strong><?php esc_html_e( 'تلفن دفتر مرکزی:', 'pargaspetroab' ); ?></strong>
 						<a href="tel:+982191091286" dir="ltr">+98 (21) 9109 1286</a>
 					</div>
 					<div class="pargas-card-contact-line">
-						<strong><?php esc_html_e( 'Postal Code:', 'pargaspetroab' ); ?></strong>
+						<strong><?php esc_html_e( 'کد پستی:', 'pargaspetroab' ); ?></strong>
 						<span dir="ltr">1596975113</span>
 					</div>
 				</div>
 
 				<div class="pargas-contact-card">
-					<h3>🏭 <?php esc_html_e( 'Najafabad Manufacturing Facility', 'pargaspetroab' ); ?></h3>
-					<p><?php esc_html_e( '3rd St, Kaveh Industrial Estate, Najafabad County, Isfahan Province, Iran', 'pargaspetroab' ); ?></p>
+					<h3>🏭 <?php esc_html_e( 'کارخانه و سالن‌های ساخت تجهیزات (اصفهان)', 'pargaspetroab' ); ?></h3>
+					<p><?php esc_html_e( 'استان اصفهان، شهرستان نجف‌آباد، خیابان سوم، شهرک صنعتی کاوه ویلاشهر', 'pargaspetroab' ); ?></p>
 					<div class="pargas-card-contact-line">
-						<strong><?php esc_html_e( 'Factory Direct:', 'pargaspetroab' ); ?></strong>
+						<strong><?php esc_html_e( 'تلفن تماس کارخانه:', 'pargaspetroab' ); ?></strong>
 						<a href="tel:+982191091286" dir="ltr">+98 (21) 9109 1286</a>
 					</div>
 					<div class="pargas-card-contact-line">
-						<strong><?php esc_html_e( 'Working Hours:', 'pargaspetroab' ); ?></strong>
-						<span><?php esc_html_e( 'Saturday – Wednesday: 07:00 – 16:00 | Thursday: 07:00 – 13:00', 'pargaspetroab' ); ?></span>
+						<strong><?php esc_html_e( 'ساعات کاری کارخانه:', 'pargaspetroab' ); ?></strong>
+						<span><?php esc_html_e( 'شنبه تا چهارشنبه: ۰۷:۰۰ الی ۱۶:۰۰ | پنج‌شنبه‌ها: ۰۷:۰۰ الی ۱۳:۰۰', 'pargaspetroab' ); ?></span>
 					</div>
 				</div>
 
 				<div class="pargas-contact-card">
-					<h3>✉️ <?php esc_html_e( 'Direct Communications', 'pargaspetroab' ); ?></h3>
+					<h3>✉️ <?php esc_html_e( 'مسیرهای ارتباط مستقیم', 'pargaspetroab' ); ?></h3>
 					<div class="pargas-card-contact-line">
-						<strong><?php esc_html_e( 'General & Procurement:', 'pargaspetroab' ); ?></strong>
+						<strong><?php esc_html_e( 'ایمیل واحد مهندسی و بازرگانی:', 'pargaspetroab' ); ?></strong>
 						<a href="mailto:info@pargaspetroab.com">info@pargaspetroab.com</a>
 					</div>
 					<div class="pargas-card-contact-line">
-						<strong><?php esc_html_e( 'WhatsApp Engineering Hotline:', 'pargaspetroab' ); ?></strong>
+						<strong><?php esc_html_e( 'پشتیبانی واتس‌اپ و تلگرام:', 'pargaspetroab' ); ?></strong>
 						<a href="https://wa.me/989124388097" target="_blank" rel="noopener noreferrer" dir="ltr">+98 912 438 8097</a>
 					</div>
 				</div>
@@ -122,13 +122,13 @@ get_header();
 			<!-- Contact Form -->
 			<div class="pargas-contact-form-panel">
 				<div class="pargas-form-box">
-					<h2><?php esc_html_e( 'Send a Direct Technical Inquiry', 'pargaspetroab' ); ?></h2>
-					<p><?php esc_html_e( 'Fill out the form below to receive detailed technical catalogues, pricing proposals, or project feasibility advice.', 'pargaspetroab' ); ?></p>
+					<h2><?php esc_html_e( 'ارسال مستقیم استعلام فنی و پروپوزال', 'pargaspetroab' ); ?></h2>
+					<p><?php esc_html_e( 'فرم زیر را تکمیل فرمایید تا کارشناسان فرآیند شرکت پرگاس پترو آب در اسرع وقت پروپوزال فنی و مالی را ارسال کنند.', 'pargaspetroab' ); ?></p>
 
 					<?php if ( $form_success ) : ?>
 						<div class="pargas-alert pargas-alert-success" role="alert">
-							<strong><?php esc_html_e( 'Inquiry Received!', 'pargaspetroab' ); ?></strong>
-							<?php esc_html_e( 'Thank you for reaching out. An engineering consultant from Pargas Petro Ab will contact you within 24 hours.', 'pargaspetroab' ); ?>
+							<strong><?php esc_html_e( 'درخواست شما با موفقیت ثبت شد!', 'pargaspetroab' ); ?></strong>
+							<?php esc_html_e( 'کارشناس فنی پرگاس پترو آب ظرف ۲۴ ساعت کاری با شما تماس خواهد گرفت.', 'pargaspetroab' ); ?>
 						</div>
 					<?php elseif ( $form_error ) : ?>
 						<div class="pargas-alert pargas-alert-danger" role="alert">
@@ -147,56 +147,55 @@ get_header();
 
 						<div class="pargas-form-row">
 							<div class="pargas-form-field">
-								<label for="contact_name"><?php esc_html_e( 'Full Name *', 'pargaspetroab' ); ?></label>
+								<label for="contact_name"><?php esc_html_e( 'نام و نام خانوادگی *', 'pargaspetroab' ); ?></label>
 								<input type="text" id="contact_name" name="contact_name" required value="<?php echo isset( $_POST['contact_name'] ) ? esc_attr( wp_unslash( $_POST['contact_name'] ) ) : ''; ?>" />
 							</div>
 
 							<div class="pargas-form-field">
-								<label for="contact_company"><?php esc_html_e( 'Company / Organization *', 'pargaspetroab' ); ?></label>
+								<label for="contact_company"><?php esc_html_e( 'نام شرکت / سازمان / پروژه *', 'pargaspetroab' ); ?></label>
 								<input type="text" id="contact_company" name="contact_company" required value="<?php echo isset( $_POST['contact_company'] ) ? esc_attr( wp_unslash( $_POST['contact_company'] ) ) : ''; ?>" />
 							</div>
 						</div>
 
 						<div class="pargas-form-row">
 							<div class="pargas-form-field">
-								<label for="contact_phone"><?php esc_html_e( 'Phone Number *', 'pargaspetroab' ); ?></label>
+								<label for="contact_phone"><?php esc_html_e( 'تلفن تماس / همراه *', 'pargaspetroab' ); ?></label>
 								<input type="tel" id="contact_phone" name="contact_phone" required dir="ltr" value="<?php echo isset( $_POST['contact_phone'] ) ? esc_attr( wp_unslash( $_POST['contact_phone'] ) ) : ''; ?>" />
 							</div>
 
 							<div class="pargas-form-field">
-								<label for="contact_email"><?php esc_html_e( 'Email Address *', 'pargaspetroab' ); ?></label>
+								<label for="contact_email"><?php esc_html_e( 'آدرس ایمیل سازمانی *', 'pargaspetroab' ); ?></label>
 								<input type="email" id="contact_email" name="contact_email" required dir="ltr" value="<?php echo isset( $_POST['contact_email'] ) ? esc_attr( wp_unslash( $_POST['contact_email'] ) ) : ''; ?>" />
 							</div>
 						</div>
 
 						<div class="pargas-form-field">
-							<label for="contact_subject"><?php esc_html_e( 'Subject / Equipment Type *', 'pargaspetroab' ); ?></label>
-							<input type="text" id="contact_subject" name="contact_subject" placeholder="<?php esc_attr_e( 'e.g. DAF System Inquiry for Petrochemical Plant', 'pargaspetroab' ); ?>" value="<?php echo isset( $_POST['contact_subject'] ) ? esc_attr( wp_unslash( $_POST['contact_subject'] ) ) : ''; ?>" required />
+							<label for="contact_subject"><?php esc_html_e( 'موضوع استعلام / نوع سیستم درخواستی *', 'pargaspetroab' ); ?></label>
+							<input type="text" id="contact_subject" name="contact_subject" placeholder="<?php esc_attr_e( 'مثال: استعلام پکیج تصفیه MBBR یا سیستم چربی‌گیر DAF', 'pargaspetroab' ); ?>" value="<?php echo isset( $_POST['contact_subject'] ) ? esc_attr( wp_unslash( $_POST['contact_subject'] ) ) : ''; ?>" required />
 						</div>
 
 						<div class="pargas-form-field">
-							<label for="contact_message"><?php esc_html_e( 'Message & Specifications *', 'pargaspetroab' ); ?></label>
-							<textarea id="contact_message" name="contact_message" rows="5" required placeholder="<?php esc_attr_e( 'Please provide capacity, water parameters (COD/BOD, TDS, pH), or specific equipment requirements.', 'pargaspetroab' ); ?>"><?php echo isset( $_POST['contact_message'] ) ? esc_textarea( wp_unslash( $_POST['contact_message'] ) ) : ''; ?></textarea>
+							<label for="contact_message"><?php esc_html_e( 'مشخصات فنی و توضیحات پروژه *', 'pargaspetroab' ); ?></label>
+							<textarea id="contact_message" name="contact_message" rows="5" required placeholder="<?php esc_attr_e( 'لطفاً دبی پساب ورودی، نوع کاربری (صنعتی، بهداشتی)، پارامترهای کیفی (COD, BOD, TSS) یا نیازمندی‌های خاص را مرقوم فرمایید.', 'pargaspetroab' ); ?>"><?php echo isset( $_POST['contact_message'] ) ? esc_textarea( wp_unslash( $_POST['contact_message'] ) ) : ''; ?></textarea>
 						</div>
 
 						<button type="submit" name="pargas_contact_submit" class="pargas-btn pargas-btn-primary pargas-btn-lg">
-							<?php esc_html_e( 'Submit Inquiry', 'pargaspetroab' ); ?>
+							<?php esc_html_e( 'ثبت و ارسال استعلام', 'pargaspetroab' ); ?>
 						</button>
 					</form>
 				</div>
 			</div>
 		</div>
 
-		<!-- Lazy-loaded Google Maps Embed Section (Zero Global JS) -->
+		<!-- Lazy-loaded Google Maps Embed Section -->
 		<section class="pargas-map-section">
-			<h2 class="pargas-map-title"><?php esc_html_e( 'Factory & Manufacturing Plant Location', 'pargaspetroab' ); ?></h2>
-			<p class="pargas-map-desc"><?php esc_html_e( 'Kaveh Industrial Estate, Najafabad County, Isfahan Province', 'pargaspetroab' ); ?></p>
+			<h2 class="pargas-map-title"><?php esc_html_e( 'موقعیت کارخانه و سالن‌های تولید', 'pargaspetroab' ); ?></h2>
+			<p class="pargas-map-desc"><?php esc_html_e( 'استان اصفهان، شهرک صنعتی کاوه نجف‌آباد، خیابان سوم', 'pargaspetroab' ); ?></p>
 			
 			<div class="pargas-map-container" id="pargas-map-wrapper">
-				<!-- Lightweight responsive iframe with native lazy loading -->
 				<iframe 
-					title="<?php esc_attr_e( 'Pargas Petro Ab Factory Location', 'pargaspetroab' ); ?>"
-					src="https://maps.google.com/maps?q=32.6341,51.3668&hl=en&z=14&output=embed" 
+					title="<?php esc_attr_e( 'موقعیت کارخانه پرگاس پترو آب', 'pargaspetroab' ); ?>"
+					src="https://maps.google.com/maps?q=32.6341,51.3668&hl=fa&z=14&output=embed" 
 					width="100%" 
 					height="420" 
 					style="border:0;" 
